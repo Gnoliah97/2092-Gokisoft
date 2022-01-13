@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title></title>
+</head>
+<body>
+	<div id="main">
+		<div id="heading">
+			<h2 class="heading_1">ĐĂNG NHẬP HỆ THỐNG</h2>
+		</div>
+		<div id="body">
+			<div class="img_login">
+				<img style="width: 80px; height: 100px;" src="E:/JS/2092 Gokisoft/BWS_Set12/login.png">
+			</div>
+			<div class="main_login">
+				<form>
+					<div class="login">
+						<label >Tài khoản</label>
+						<input  id="tai_khoan" type="text" name="">
+						<span id="loi_tai_khoan"></span>
+					</div>
+					<div class="login">
+						<label >Mật khẩu</label>
+						<input id="password"  type="password" name="">
+						<span id="loi_password"></span>
+
+					</div>	
+					<div class="">
+						<input value="Đăng Nhập" type="button" id="myBtn" onclick="return function_a() ">
+						<button type="reset">Nhập lại</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div id="thong_bao">
+		<div id="dang_nhap">Đăng nhập thành công</div>
+		<div id="ok">
+			<button><a href="library.html">OK</a></button>
+		</div>
+	</div>
+
+<script type="text/javascript">
+	function kiem_tra() 
+	{
+		let kiem_tra_loi = false
+		let taikhoan = document.getElementById('tai_khoan').value
+		console.log(taikhoan)
+		if(!taikhoan)
+			{
+			document.getElementById('loi_tai_khoan').innerHTML = 'Tài khoản không được để trống'
+			kiem_tra_loi = true
+			}
+		let password = document.getElementById('password').value
+		console.log(password)
+		if(!password )
+			{
+			document.getElementById('loi_password').innerHTML = 'Tài khoản không được để trống'
+			kiem_tra_loi = true
+			}
+		return kiem_tra_loi
+	}
+	var thongbao= document.getElementById("thong_bao")
+	var btn= document.getElementById("myBtn")
+	function function_a() {
+		let have_error = kiem_tra()
+		if (have_error) {
+			return
+		} 
+		thongbao.style.display = "block";
+	}
+	
+</script>
+</body>
+</html>
